@@ -100,7 +100,8 @@ public void tearDown() {
 
 public  ResultSet dbConnect(String queryToExecute) {
 	Connection connection;
-	String connectionUrl = "jdbc:sqlserver://bimservicesdb-qa.database.windows.net;databaseName=BimSys";
+	String connectionUrl = "jdbc:sqlserver://bimservicesdb-qa.database.windows.net;databaseName=BimSys"
+			+ "+\"encrypt=true;trustServerCertificate=false;\"";
 	String userName="bimx05dbqa";
 	String pass="jVs4xpUsVd35eyr5";
 	try {
