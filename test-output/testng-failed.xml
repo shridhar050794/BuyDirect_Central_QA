@@ -3,33 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="BuyDirect.BuyDirectTests.EnrollScreenTest">
+      <class name="BuyDirect.BuyDirectTests.WelcomePageTest">
         <methods>
-          <include name="check_PIN_Mandatory"/>
-          <include name="check_TermsTextClick_Ability"/>
-          <include name="check_SignInLink"/>
-          <include name="check_Phone_Mandatory"/>
-          <include name="verify_Enroll_Header"/>
-          <include name="check_NotificationLink"/>
+          <include name="verify_Welcome_Page_Body_Texts"/>
           <include name="launchApp"/>
-          <include name="check_state_Mandatory"/>
           <include name="tearDown"/>
-          <include name="check_Term_Mandatory"/>
-          <include name="check_IDStateAndNumber_Mandatory"/>
-          <include name="check_TermLink"/>
-          <include name="verify_Continue_Buttton"/>
-          <include name="check_Zip_Mandatory"/>
-          <include name="check_Email_Mandatory"/>
-          <include name="check_StreetAddress_Mandatory"/>
-          <include name="check_PartnerPhoneNumber"/>
-          <include name="verify_Input"/>
-          <include name="check_City_Mandatory"/>
-          <include name="check_FirstName_Mandatory"/>
-          <include name="check_LasttName_Mandatory"/>
-          <include name="check_DOB_Mandatory"/>
-          <include name="partner_Logo_Name_Footer_Test"/>
         </methods>
-      </class> <!-- BuyDirect.BuyDirectTests.EnrollScreenTest -->
+      </class> <!-- BuyDirect.BuyDirectTests.WelcomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
