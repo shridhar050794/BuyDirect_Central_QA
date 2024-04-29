@@ -26,7 +26,7 @@ public class WelcomePageClass extends AbstractComponents{
 @FindBy(id="btnGetStarted")
 public  WebElement startbutton;
 
-@FindBy(xpath="(//a[contains(text(),' sign in here')])[2]")
+@FindBy(xpath="(//a[contains(text(),'Click Here to continue where you left off')])[2]")
  public WebElement signinLink;
 
 

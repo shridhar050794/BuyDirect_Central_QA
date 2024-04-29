@@ -20,6 +20,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -47,11 +49,15 @@ public class TestUtils {
 	public String imagelink;
 	public static TestHelper testhelper;
 	public String requiredFooter;
+	public Properties prop;
+	ChromeOptions chromeopt;
+	EdgeOptions edgeopt;
+	String browserName ;
 	
 	public WebDriver browserInvoke() throws IOException {
 		 
         //go to page
-		Properties prop = new Properties();
+		 prop = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+
 				"\\src\\main\\java\\BuyDirect\\resource\\GlobalData.properties");
 		prop.load(fis);
@@ -59,31 +65,54 @@ public class TestUtils {
 		Partnerid = Base64.getEncoder()
 				.encodeToString(partner.getBytes());
 		enrollmentorigin=prop.getProperty("enrollmentorigin");
-		if(prop.getProperty("browser").equalsIgnoreCase("chrome")) 
+		//to get the browser name from properties
+		//browserName=prop.getProperty("browser");
+		
+		//now to get the broeser name from console of maven and if it is null we need to get it from propertie file
+		browserName= System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
+		if(browserName.equalsIgnoreCase("chrome")) 
 		{
 		WebDriverManager.chromedriver().setup();
 	    driver = new ChromeDriver(handleAutoSaveForChrome());
 		}
-		if(prop.getProperty("browser").equalsIgnoreCase("firefox")) 
+		if(browserName.equalsIgnoreCase("edge")) 
 		{
-			System.setProperty("webdriver.gecko.driver",
-					"C://Users//shridhar//eclipse//geckodriver-v0.34.0-win32//geckodriver.exe");
 			
-			driver= new FirefoxDriver();
+			//System.setProperty("webdriver.edge.driver", "C:\\New folder\\Selenium\\msedgedriver.exe");
+			
+			System.setProperty("webdriver.edge.driver", "C:\\New folder\\Selenium\\msedgedriver.exe");
+			//driver = new EdgeDriver();
+			
+			driver= new EdgeDriver(handleAutoSaveForEdge());
 			}
 	    driver.manage().window().maximize(); 
         return driver;
 		
 	}
 public ChromeOptions handleAutoSaveForChrome() {
-		ChromeOptions options = new ChromeOptions();
-		Map<String, Object> prefs = new HashMap<String, Object>();
-		prefs.put("autofill.profile_enabled", false);
-		options.setExperimentalOption("prefs", prefs);
-		options.addArguments("force-device-scale-factor=0.80");
-		options.addArguments("high-dpi-support=0.80");
-		return options;
+	
+		chromeopt = new ChromeOptions();
+		
+		  Map<String, Object> prefs = new HashMap<String, Object>();
+		  prefs.put("autofill.profile_enabled", false);
+		  chromeopt.setExperimentalOption("prefs", prefs);
+		  chromeopt.addArguments("force-device-scale-factor=0.80");
+		  chromeopt.addArguments("high-dpi-support=0.80");
+		 
+		chromeopt.addArguments("--guest");
+		//if we want to run browser in headless , use below option
+		//chromeopt.addArguments("headless");
+		return chromeopt;
+	
 	}
+
+public EdgeOptions handleAutoSaveForEdge() {
+	
+	edgeopt = new EdgeOptions();
+	edgeopt.addArguments("--guest");
+	return edgeopt;
+
+}
 @BeforeMethod
 public WelcomePageClass launchApp() throws IOException {
 	driver = browserInvoke();
