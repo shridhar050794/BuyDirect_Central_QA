@@ -120,8 +120,6 @@ public WelcomePageClass launchApp() throws IOException {
 	welcome.goTo(Partnerid,enrollmentorigin);
 	return welcome;
 	
-	
-	
 }
 @AfterMethod
 public void tearDown() {
