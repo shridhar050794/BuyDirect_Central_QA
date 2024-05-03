@@ -119,7 +119,7 @@ public WelcomePageClass launchApp() throws IOException {
 	welcome = new WelcomePageClass(driver);
 	welcome.goTo(Partnerid,enrollmentorigin);
 	return welcome;
-	
+
 }
 @AfterMethod
 public void tearDown() {
