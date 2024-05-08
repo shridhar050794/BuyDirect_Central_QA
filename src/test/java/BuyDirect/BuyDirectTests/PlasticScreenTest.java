@@ -93,13 +93,16 @@ public class PlasticScreenTest extends TestUtils {
 	@Test
 	public void verify_Plastic_Body_Texts() throws InterruptedException, IOException, ParseException {
 		PlasticScreen_Entry();
-		//TestHelper testhelper = new TestHelper();
-		//String name1="plasticBodyMain";
-		//String name2="plasticBodySub";
+		String plasticbody = queryExecutionMethod(testhelper.plasticBody_Query_without_pipe);
+		if(plasticbody.contains("|")) {
 		String[] column = {"plasticBodyMain","plasticBodySub"};
-		List<String> plasticBody =  queryExecutionMethodForMultipleDataInColumns(testhelper.plasticProperties_Query,column);
+		List<String> plasticBody =  queryExecutionMethodForMultipleDataInColumns(testhelper.plasticBody_Query,column);
 		Assert.assertEquals(plastic.plasticMainBody.getText(),plasticBody.get(0).trim());
 		Assert.assertEquals(plastic.plasticSubBody.getText(), plasticBody.get(1).trim());
+		}
+		else {
+			Assert.assertEquals(plasticbody.trim(),plastic.plasticMainBody.getText());
+		}
 		
 	}
 	

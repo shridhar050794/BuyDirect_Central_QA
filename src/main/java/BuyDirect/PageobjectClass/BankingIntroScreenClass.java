@@ -14,29 +14,33 @@ public class BankingIntroScreenClass extends AbstractComponents{
 		PageFactory.initElements(driver, this);
 	}
 	
-@FindBy(xpath="//h2[contains(text() ,'Link Your Bank Account')]")
+@FindBy(xpath="//div/h1")
 public WebElement introHeader;
 
-@FindBy(xpath="//span[contains(text(),'Two ways')]")
+@FindBy(xpath="//p[@id='banking-intro__body']/span")
 public WebElement introBody;
 
 
-@FindBy(xpath="//button[@id='btn-banking-intro__iav']")
-public WebElement iavButton;
+@FindBy(xpath="//label[@for='btn-banking-intro-mob__iav']")
+public WebElement iavBox;
 
-@FindBy(xpath="//div/button/div/h2[text()='Instant']")
-public WebElement iavButtonText;
+@FindBy(xpath="//span[contains(text(),'Securely log in')]")
+public WebElement iavBoxText;
 
 
-@FindBy(xpath="//button[@id='btn-banking-intro__cdw']")
-public WebElement cdwButton;
+@FindBy(xpath="//label[@for='btn-banking-intro-mob__cdw']")
+public WebElement cdwBox;
+
+
+@FindBy(xpath="//span[contains(text(),'Enter your routing')]")
+public WebElement cdwButtonText; 
 
 
 //String introBodyText = introBody.getText();
 public IAVScreenClass submitIntroScreenToIAV() throws InterruptedException {
 	//waitImplicit();
-	waitForWebElementToAppear(iavButton); 
-	iavButton.click();
+	waitForWebElementToAppear(iavBox); 
+	iavBox.click();
 	IAVScreenClass iavclass = new IAVScreenClass(driver);
 	
 	waitImplicit();
@@ -46,9 +50,9 @@ public IAVScreenClass submitIntroScreenToIAV() throws InterruptedException {
 
 public CDWScreenClass submitIntroScreenToCDW() throws InterruptedException 
 	{
-	waitForWebElementToAppear(cdwButton);
+	waitForWebElementToAppear(cdwBox);
 
-	cdwButton.click();
+	cdwBox.click();
 	CDWScreenClass cdwclass = new CDWScreenClass(driver);
 	//Thread.sleep(20000);
 	waitImplicit();

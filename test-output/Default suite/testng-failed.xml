@@ -6,8 +6,8 @@
       <class name="BuyDirect.BuyDirectTests.PlasticScreenTest">
         <methods>
           <include name="launchApp"/>
+          <include name="verify_Plastic_Body_Texts"/>
           <include name="tearDown"/>
-          <include name="partner_Logo_Name_Footer_Test"/>
         </methods>
       </class> <!-- BuyDirect.BuyDirectTests.PlasticScreenTest -->
     </classes>

@@ -15,7 +15,7 @@ public class PlasticScreenClass extends AbstractComponents {
 		PageFactory.initElements(driver, this);
 	}
 	
-@FindBy(css="h2[id='headerPlasticRequest']")
+@FindBy(id="headerPlasticRequest")
 public WebElement plasticHeader;
 
 @FindBy(id="plastic-request--subtitle")

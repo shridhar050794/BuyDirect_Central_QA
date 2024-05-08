@@ -2,6 +2,7 @@ package BuyDirect.BuyDirectTests;
 import java.io.IOException;
 import java.text.ParseException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import BuyDirect.PageobjectClass.BankingIntroScreenClass;
@@ -11,7 +12,7 @@ import TestComponents.TestUtils;
 
 public class BankingIntroTest extends TestUtils {
 	static BankingIntroScreenClass bankclass;
-	@Test
+	
 	public void validation() throws InterruptedException, IOException, ParseException {
 	
 		EnrollScreenClass es =welcome.submitEnrollScreen();
@@ -29,9 +30,20 @@ public class BankingIntroTest extends TestUtils {
 			bankclass  = es.continueWithoutPlasticScreen();
 			
 		}
-
-		
+	
 		
 	}
+	@Test
+	public void page_title() throws InterruptedException, IOException, ParseException {
+		PlasticScreenTest plasticScreenobject = new PlasticScreenTest();
+		plasticScreenobject.PlasticScreen_Entry();
+		BankingIntroTest testobject = new BankingIntroTest();
+		testobject.validation();
+		String actualTitle=bankclass.introHeader.getText();
+		String expectedTitle="Connect your account";
+		Assert.assertEquals(actualTitle, expectedTitle);
+	}
+	
+		
 
 }

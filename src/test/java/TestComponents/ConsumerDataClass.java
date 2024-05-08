@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ConsumerDataClass {
 	public static Map<String, String> ExcelDataReader() throws IOException {
-        FileInputStream inputStream = new FileInputStream("C:\\Users\\shridhar\\Desktop\\ConsumerData.xlsx");
+        FileInputStream inputStream = new FileInputStream("C:\\New folder\\Selenium\\New folder\\BuyDirect_FrameWork_Duplicate\\ConsumerData.xlsx");
         Workbook workbook = new XSSFWorkbook(inputStream);
         Sheet sheet = workbook.getSheet("ConsumerData");
 

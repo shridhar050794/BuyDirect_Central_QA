@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-29T21:06:32 IST" name="Default suite" finished-at="2024-04-29T21:06:45 IST" duration-ms="12813">
+  <suite started-at="2024-05-08T14:34:54 IST" name="Default suite" finished-at="2024-05-08T14:36:49 IST" duration-ms="114928">
     <groups>
     </groups>
-    <test started-at="2024-04-29T21:06:32 IST" name="Default test" finished-at="2024-04-29T21:06:45 IST" duration-ms="12813">
-      <class name="BuyDirect.BuyDirectTests.LoginScreenTest">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:BuyDirect.BuyDirectTests.LoginScreenTest@5e0e82ae]" started-at="2024-04-29T21:06:32 IST" name="launchApp" finished-at="2024-04-29T21:06:37 IST" duration-ms="4388" status="PASS">
+    <test started-at="2024-05-08T14:34:54 IST" name="Default test" finished-at="2024-05-08T14:36:49 IST" duration-ms="114928">
+      <class name="BuyDirect.BuyDirectTests.PlasticScreenTest">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:BuyDirect.BuyDirectTests.PlasticScreenTest@5890e879]" started-at="2024-05-08T14:34:54 IST" name="launchApp" finished-at="2024-05-08T14:35:00 IST" duration-ms="5591" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="loginTest()[pri:0, instance:BuyDirect.BuyDirectTests.LoginScreenTest@5e0e82ae]" started-at="2024-04-29T21:06:37 IST" name="loginTest" finished-at="2024-04-29T21:06:45 IST" duration-ms="8225" status="PASS">
+        <test-method signature="verify_Plastic_Body_Texts()[pri:0, instance:BuyDirect.BuyDirectTests.PlasticScreenTest@5890e879]" started-at="2024-05-08T14:35:00 IST" name="verify_Plastic_Body_Texts" finished-at="2024-05-08T14:36:49 IST" duration-ms="109092" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:BuyDirect.BuyDirectTests.LoginScreenTest@5e0e82ae]" started-at="2024-04-29T21:06:45 IST" name="tearDown" finished-at="2024-04-29T21:06:45 IST" duration-ms="152" status="PASS">
+        </test-method> <!-- verify_Plastic_Body_Texts -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:BuyDirect.BuyDirectTests.PlasticScreenTest@5890e879]" started-at="2024-05-08T14:36:49 IST" name="tearDown" finished-at="2024-05-08T14:36:49 IST" duration-ms="211" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- BuyDirect.BuyDirectTests.LoginScreenTest -->
+      </class> <!-- BuyDirect.BuyDirectTests.PlasticScreenTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
