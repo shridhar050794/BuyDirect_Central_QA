@@ -4,9 +4,9 @@
   <test thread-count="5" name="Test">
     <classes>
    
-      <class name="BuyDirect.BuyDirectTests.WelcomeBackScreenTest"/>
-      <class name="BuyDirect.BuyDirectTests.LoginScreenTest"/>
+      <class name="BuyDirect.BuyDirectTests.PlasticScreenTest"/>
       <class name="BuyDirect.BuyDirectTests.WelcomePageTest"/>
+      <class name="BuyDirect.BuyDirectTests.WelcomeBackScreenTest"></class>
       <!--class name="BuyDirect.BuyDirectTests.EnrollScreenTest"/-->
      
     </classes>
